@@ -1,0 +1,6 @@
+[submodule "lk"]
+	path = lk
+	url = git@github.com:littlekernel/lk.git
+[submodule "dartino-sdk"]
+	path = dartino-sdk
+	url = git@github.com:dartino/sdk.git
