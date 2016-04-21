@@ -11,8 +11,10 @@ And to build the project in release mode:
 DEBUG= make -C disco-dartino stm32f746g-disco-dartino -j8
 ```
 
-Assuming OpenOCD is installed in `$OPENOCDHOME` this can now be flashed to a STM32F746G Discovery board using the following command:
+Assuming OpenOCD is installed in `$OPENOCDHOME` this can now be flashed to
+a _STM32F746G Discovery_ board using the following command:
 
+```
 $OPENOCDHOME/bin/openocd                                                                       \
     -f interface/stlink-v2-1.cfg                                                               \
     -f board/stm32f7discovery.cfg                                                              \
@@ -22,8 +24,10 @@ $OPENOCDHOME/bin/openocd                                                        
     -c "flash write_image erase disco-dartino/build-stm32f746g-disco-dartino/lk.bin 0x8000000" \
     -c "reset run"                                                                             \
     -c "shutdown"
+```
 
-The project was created by pulling in the Dartink SDK and LK projects as Git submodules:
+The project was created by pulling in the Dartink SDK and LK projects as Git
+submodules:
 
 ```
 git submodule add git@github.com:littlekernel/lk.git
