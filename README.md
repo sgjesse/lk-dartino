@@ -2,6 +2,17 @@
 
 Simple embedding of the Dartino VM in LK.
 
+The project was created by pulling in the Dartink SDK and LK projects as Git
+submodules:
+```
+git submodule add git@github.com:littlekernel/lk.git
+git submodule add  git@github.com:dartino/sdk.git dartino-sdk
+```
+So after checkout remember to initialize and update the submodules.
+```
+git submodule init
+git submodule update
+```
 To build the project in debug mode:
 ```
 make -C disco-dartino stm32f746g-disco-dartino -j8
@@ -24,12 +35,4 @@ $OPENOCDHOME/bin/openocd                                                        
     -c "flash write_image erase disco-dartino/build-stm32f746g-disco-dartino/lk.bin 0x8000000" \
     -c "reset run"                                                                             \
     -c "shutdown"
-```
-
-The project was created by pulling in the Dartink SDK and LK projects as Git
-submodules:
-
-```
-git submodule add git@github.com:littlekernel/lk.git
-git submodule add  git@github.com:dartino/sdk.git dartino-sdk
 ```
